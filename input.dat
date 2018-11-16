@@ -1,3 +1,6 @@
 projdir = /home/adegennaro/Projects/LeaveOneOut/
 datadir = ./
 outdir  = ./
+function = RandomGaussians
+dimension = 2
+initialsamples = 10
