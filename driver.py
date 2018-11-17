@@ -33,6 +33,7 @@ plt.subplot(131);
 Z   = trueFunction.evaluate(X)
 plt.contourf(xx,yy,np.reshape(Z,[50,50]),20,vmin=0,vmax=1.0,cmap=plt.get_cmap('coolwarm'));
 plt.gca().set_aspect('equal');
+plt.title('Ground truth')
 
 # Initial coarse random sampling + build base GP
 sampler.uniform(samples=inputs.initialSamples);
@@ -45,7 +46,7 @@ xcent,zcent = dataPoints.getData();
 plt.contourf(xx,yy,np.reshape(Z,[50,50]),20,vmin=0,vmax=1.0,cmap=plt.get_cmap('coolwarm'));
 plt.plot(xcent[:,0],xcent[:,1],'ko');
 plt.gca().set_aspect('equal');
-plt.show();
+plt.title('Initial results')
 
 # Adaptive sampling
 sampler.leaveOneOutAdaptive();
@@ -57,5 +58,7 @@ plt.subplot(133);
 plt.contourf(xx,yy,np.reshape(Z,[50,50]),20,vmin=0,vmax=1.0,cmap=plt.get_cmap('coolwarm'));
 plt.plot(xcent[:,0],xcent[:,1],'ko');
 plt.gca().set_aspect('equal');
+plt.title('Final results')
+
 plt.ioff();
 plt.show();
