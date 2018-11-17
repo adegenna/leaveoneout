@@ -16,6 +16,10 @@ class InputFile():
         self.function        = inputfilestream.readline().strip().split('= ')[1];
         self.dimension       = int(inputfilestream.readline().strip().split('= ')[1]);
         self.initialSamples  = int(inputfilestream.readline().strip().split('= ')[1]);
+        self.adaptiveIters   = int(inputfilestream.readline().strip().split('= ')[1]);
+        self.testSamples     = int(inputfilestream.readline().strip().split('= ')[1]);
+        self.kernelScale     = float(inputfilestream.readline().strip().split('= ')[1]);
+        self.kernelSigma     = float(inputfilestream.readline().strip().split('= ')[1]);
         inputfilestream.close();
     def printInputs(self):
         attrs = vars(self);
